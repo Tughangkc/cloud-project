@@ -1,0 +1,946 @@
+{
+	"info": {
+		"_postman_id": "3ffe02c2-287d-48c5-ba93-7d1fc5331dc1",
+		"name": "VisionRent Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23410496"
+	},
+	"item": [
+		{
+			"name": "ContactMessage",
+			"item": [
+				{
+					"name": "createMessage",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n\"name\" : \"test\",\n\"subject\": \"hey testtttttttt!\",\n\"body\": \"are you available? if you are not it dsdasdgfgfdgdfhghshg your problem and please accept \",\n\"email\" : \"testtest@test.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contactmessage/visitors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contactmessage",
+								"visitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY5ODkyMDM1LCJleHAiOjE2Njk5Nzg0MzV9.1VPX4VTrILi0bLm5LJEYUwK3BUGbnKCoYGV237tWzp0gFEHGtE9JvhN9fGxtmFdDXpDEZ2tKo73fq447WGR-bw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/contactmessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contactmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllWithPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/contactmessage/pages?page=0&size=2&sort=id&direction=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contactmessage",
+								"pages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "direction",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessageWithPath",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/contactmessage/200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contactmessage",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessageWithRequestParam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/contactmessage/request?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contactmessage",
+								"request"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jwt-auth",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"tarik\",\n    \"lastName\" : \"kose\",\n    \"password\" : \"password\",\n    \"phoneNumber\" : \"(541) 357-8828\",\n    \"email\" : \"tarik@gmail.com\",\n    \"address\" : \"New York, USA\",\n    \"zipCode\" : \"36541\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"tarik@gmail.com\",\n    \"password\" : \"newPassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-management",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4ODkzNDkwLCJleHAiOjE2Njg5Nzk4OTB9.0-04bvnzF7lYeeEnOGdVjl-dVe7ve6Hslc77J318y0iFP5RMbFRxeGrgnwPBYEC2UMR1Zobe2xmm7KSHs0HPCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/auth/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsersByPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4YW9wZHNAeXl5LmNvbSIsImlhdCI6MTY2Nzg1NTcwOCwiZXhwIjoxNjY3OTQyMTA4fQ.QV2GsSeqf9Qbddxyw3JAXn2Bu5YuLikBSwQmlQ1U8SRFmLWlTJQ1qCIijpVK5H8yWSFfN7Tu4PpwEUBvqpIVsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/auth/pages?page=0&size=1&sort=id&direction=ASC ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth",
+								"pages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "direction",
+									"value": "ASC "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4YW9wZHNAeXl5LmNvbSIsImlhdCI6MTY2Nzg1NTcwOCwiZXhwIjoxNjY3OTQyMTA4fQ.QV2GsSeqf9Qbddxyw3JAXn2Bu5YuLikBSwQmlQ1U8SRFmLWlTJQ1qCIijpVK5H8yWSFfN7Tu4PpwEUBvqpIVsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/2/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"2",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY5ODkyMDM1LCJleHAiOjE2Njk5Nzg0MzV9.1VPX4VTrILi0bLm5LJEYUwK3BUGbnKCoYGV237tWzp0gFEHGtE9JvhN9fGxtmFdDXpDEZ2tKo73fq447WGR-bw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4YW9wZHNAeXl5LmNvbSIsImlhdCI6MTY2NzkzNDU3MSwiZXhwIjoxNjY4MDIwOTcxfQ.X9GOWTIra_W7lsaqPXv8VpPCmT_unXfyDb-BALgSPFztVbh0aYfovGuG7g9nbwS2s2MB9WT6IGDK4AYKCu49sQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"password\",\n    \"newPassword\":\"yenipassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/auth/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4YW9wZHNAeXl5LmNvbSIsImlhdCI6MTY2Nzg1NTcwOCwiZXhwIjoxNjY3OTQyMTA4fQ.QV2GsSeqf9Qbddxyw3JAXn2Bu5YuLikBSwQmlQ1U8SRFmLWlTJQ1qCIijpVK5H8yWSFfN7Tu4PpwEUBvqpIVsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \n        \"firstName\": \"admin new\",\n        \"lastName\": \"soyisim1\",\n        \"email\": \"admin@yyy.com\",\n        \"phoneNumber\": \"(541) 317-8828\",\n        \"address\": \"New York, USA\",\n        \"zipCode\": \"36548\"\n        \n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB5eXkuY29tIiwiaWF0IjoxNjY4MTA1MjE2LCJleHAiOjE2NjgxOTE2MTZ9.QP08fm8ECu6TfnRkDTqMaDgWfhvI27MpGAf6tlQ-VOWisxl57vpX3JN_NATqgxEAGQEuIzLYghN8XtfSXPp7PA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "image-management",
+			"item": [
+				{
+					"name": "uploadImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/tarikkose/Desktop/mater.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/files/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downloadImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/download/7bfcad74-87da-44c6-b8e9-d406bc6c3d32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"download",
+								"7bfcad74-87da-44c6-b8e9-d406bc6c3d32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "displayImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/display/d0e8ff11-a432-45a7-bd47-a2ea121df461",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"display",
+								"d0e8ff11-a432-45a7-bd47-a2ea121df461"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllimages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/files/b51e9d13-c8ff-4c40-ab90-813ef9b9a0cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files",
+								"b51e9d13-c8ff-4c40-ab90-813ef9b9a0cb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "car-management",
+			"item": [
+				{
+					"name": "saveCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t    \"model\": \"queen\",\n\t\t    \"doors\": 2,\n\t\t    \"seats\": 4,\n\t\t    \"luggage\": 450,\n\t\t    \"transmission\": \"automatic\",\n\t\t    \"airConditioning\": true,\n\t\t    \"age\": 4,\n\t\t    \"pricePerHour\": 1200,\n\t\t    \"fuelType\": \"gasoline\"\n\t\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/admin/7bfcad74-87da-44c6-b8e9-d406bc6c3d32/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"admin",
+								"7bfcad74-87da-44c6-b8e9-d406bc6c3d32",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCars",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/visitors/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"visitors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCarsWithPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/visitors/pages?size=1&page=0&sort=id&direction=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"visitors",
+								"pages"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "direction",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCarById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/visitors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"visitors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCarWithImageId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t    \"model\": \"mater-araba2\",\n\t\t    \"doors\": 4,\n\t\t    \"seats\": 4,\n\t\t    \"luggage\": 450,\n\t\t    \"transmission\": \"automatic\",\n\t\t    \"airConditioning\": true,\n\t\t    \"age\": 4,\n\t\t    \"pricePerHour\": 400,\n\t\t    \"fuelType\": \"diesel\"\n\t\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car/admin/auth/?id=1&imageId=d0e8ff11-a432-45a7-bd47-a2ea121df461",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"admin",
+								"auth",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "imageId",
+									"value": "d0e8ff11-a432-45a7-bd47-a2ea121df461"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/car/admin/1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"admin",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation-management",
+			"item": [
+				{
+					"name": "makeReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4MjQwNjM2LCJleHAiOjE2NjgzMjcwMzZ9.n4jnA51oZfw3HCKzq_J4u9MKQBA2M-9TtsukJXq628q31YoGf3F79asDK9bzrjiZbinV2SNN3rpoRLZ7KLyEtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \t\t\"pickUpTime\" : \"11/30/2022 20:00:00\",\n\t  \t\t\"dropOffTime\" : \"11/30/2022 21:00:00\",\n\t  \t\t\"pickUpLocation\" : \"Ankara\",\n\t  \t\t\"dropOffLocation\" : \"Ankara\"\n\t  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations/add?carId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"add"
+							],
+							"query": [
+								{
+									"key": "carId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "excell-report",
+			"item": [
+				{
+					"name": "userReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb21lb25lMkB5eXkuY29tIiwiaWF0IjoxNjY4NTA1MTA5LCJleHAiOjE2Njg1OTE1MDl9.f8sJPetPYfX53642Y2ILBUoWZzpJc4aMYrLVLtR8NcWCpHuBPofmG_ysYG6MUuXAVSODLoO5HeWwKnsxY-VWPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/excel/download/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"excel",
+								"download",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

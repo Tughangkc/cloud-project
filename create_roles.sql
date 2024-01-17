@@ -1,0 +1,3 @@
+INSERT INTO t_role (id, role_name)
+VALUES (1, 'ROLE_CUSTOMER'), (2, 'ROLE_ADMIN')
+ON CONFLICT (id) DO NOTHING; 
