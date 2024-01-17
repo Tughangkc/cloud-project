@@ -166,7 +166,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\" : \"tarik\",\n    \"lastName\" : \"kose\",\n    \"password\" : \"password\",\n    \"phoneNumber\" : \"(541) 357-8828\",\n    \"email\" : \"tarik@gmail.com\",\n    \"address\" : \"New York, USA\",\n    \"zipCode\" : \"36541\"\n}",
+							"raw": "{\n    \"firstName\" : \"tughan\",\n    \"lastName\" : \"gokce\",\n    \"password\" : \"password\",\n    \"phoneNumber\" : \"(541) 357-8828\",\n    \"email\" : \"tughan@gmail.com\",\n    \"address\" : \"New York, USA\",\n    \"zipCode\" : \"36541\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -194,7 +194,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"tarik@gmail.com\",\n    \"password\" : \"newPassword\"\n}",
+							"raw": "{\n    \"email\" : \"tughan@gmail.com\",\n    \"password\" : \"newPassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
